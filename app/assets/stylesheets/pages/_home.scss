@@ -1,1 +1,58 @@
-// Specific CSS for your home-page
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+  }
+  p {
+    color: white;
+    opacity: .8;
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .btn {
+    padding: 15px 50px;
+  }
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $blue;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.section-title, .sub-section {
+  text-align: center;
+
+  i {
+    font-size: 60px;
+    padding-bottom: 25px;
+    color: $blue;
+  }
+}
+
+.how-it-works-section {
+  padding: 100px 0px;
+
+  h1 {
+    color: $blue;
+  }
+  h5 {
+    color: $gray;
+  }
+}

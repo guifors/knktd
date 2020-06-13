@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_145352) do
+ActiveRecord::Schema.define(version: 2020_06_13_171034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "description"
+    t.string "region"
+    t.string "search_criteria"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
 
   create_table "startups", force: :cascade do |t|
     t.string "name"
@@ -36,8 +46,20 @@ ActiveRecord::Schema.define(version: 2020_06_07_145352) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "surname"
+    t.string "job_title"
+    t.string "company_name"
+    t.string "company_description"
+    t.string "company_usp"
+    t.string "company_poc_description"
+    t.string "company_poc_examples"
+    t.string "company_industry"
+    t.boolean "corporate", default: false
+    t.boolean "startup", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users"
 end

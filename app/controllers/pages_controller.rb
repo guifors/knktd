@@ -1,17 +1,30 @@
+require 'nokogiri'
+require 'open-uri'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @startup = get_additional_info_from_dealroom(["fixico"])
   end
+
+  private
 
   def get_additional_info_from_dealroom(startups)
     startups.each do |startup|
       @agent = Mechanize.new
       @url = "https://app.dealroom.co/companies/#{startup}"
-      @tags = @agent.get(@url).search(".tag-item__name span")
+
+      @html_file = open(@url).read
+      @html_doc = Nokogiri::HTML(@html_file)
+
+
+      @tags = @agent.get(@url).search('.tag-item__name')
+      @tags_stripped = []
+      @tags.each do |tag|
+        @tags_stripped << tag.text.strip
+      end
       raise
-      return @tags
+      return @tags_stripped
     end
   end
 

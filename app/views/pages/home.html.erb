@@ -1,1 +1,52 @@
-<p><%= @startup %></p>
+<%= content_for(:navbar_class, "navbar-home") %>
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Corporate innovation on demand</h1>
+    <p> Identify the best startups for your innovation challenges. For free.</p>
+    <%= link_to "Get started", new_user_session_path, class: "btn btn-lg btn-flat"  %>
+  </div>
+</div>
+<section class="how-it-works-section">
+  <div class="container">
+    <div class="section-content">
+      <div class="section-title">
+        <h1 class="">How it works</h1>
+        <h5>It's simple, really</h5>
+      </div>
+    </div>
+    <div class="sub-sections">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="sub-section pt-5">
+            <i class="far fa-list-alt"></i>
+            <div>
+              <h5 class="subtitle subtitle-sub-section">1. Explain your dev problem</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="sub-section pt-5">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+              <h5 class="subtitle subtitle-sub-section">2. Schedule a 10-30min slack consultation</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="sub-section pt-5">
+            <i class="fas fa-laptop-code"></i>
+            <div>
+              <h5 class="subtitle subtitle-sub-section">3. Go through the problem with a pro teacher</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="challenge-form">
+  <%= simple_form_for User.new do |f| %>
+    <%= f.input :name, label: "Name" %>
+    <%= f.submit "Create", class: "btn btn-flat" %>
+  <% end %>
+</section>
