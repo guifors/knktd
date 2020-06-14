@@ -27,7 +27,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $blue;
+  background: #1EDD88;
   transition: background 0.3s ease;
 }
 
@@ -42,17 +42,36 @@
   i {
     font-size: 60px;
     padding-bottom: 25px;
-    color: $blue;
+    color: $gray-b;
   }
+
+   p {
+      color: $light-gray;
+    }
 }
 
-.how-it-works-section {
+section {
   padding: 100px 0px;
 
-  h1 {
-    color: $blue;
-  }
-  h5 {
-    color: $gray;
+  .section-title {
+    color: black;
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 }
+
+.challenge-form {
+  background-color: #F7F8F9;
+  .form-title {
+    color: black;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  h5 {
+    color: $gray-b;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+}
+

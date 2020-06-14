@@ -9,34 +9,37 @@
 <section class="how-it-works-section">
   <div class="container">
     <div class="section-content">
-      <div class="section-title">
-        <h1 class="">How it works</h1>
-        <h5>It's simple, really</h5>
-      </div>
+      <h5 class="section-title">It only takes 3 steps to find the most suitable startups</h5>
     </div>
     <div class="sub-sections">
       <div class="row">
         <div class="col-md-4">
           <div class="sub-section pt-5">
-            <i class="far fa-list-alt"></i>
+            <i class="fas fa-rocket"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">1. Explain your dev problem</h5>
+              <h5 class="subtitle subtitle-sub-section">1. Tell us about an innovation challenge you want to solve
+              </h5>
+              <p>We keep your company details absolutely confidential</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="sub-section pt-5">
-            <i class="far fa-calendar-alt"></i>
+            <i class="fas fa-search-location"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">2. Schedule a 10-30min slack consultation</h5>
+              <h5 class="subtitle subtitle-sub-section">2. We look for the best startups who can solve for the challenge</h5>
+              <p>
+                Include any search or startup criteria you want</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="sub-section pt-5">
-            <i class="fas fa-laptop-code"></i>
+            <i class="fas fa-list-alt"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">3. Go through the problem with a pro teacher</h5>
+              <h5 class="subtitle subtitle-sub-section">3. You get a curated list of startups with key POC-related information </h5>
+              <p>
+                Startups respond to the challenge with their most up to date information</p>
             </div>
           </div>
         </div>
@@ -45,8 +48,42 @@
   </div>
 </section>
 <section class="challenge-form">
-  <%= simple_form_for User.new do |f| %>
-    <%= f.input :name, label: "Name" %>
-    <%= f.submit "Create", class: "btn btn-flat" %>
-  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h5 class="form-title">Submit your innovation challenge here</h5>
+        <h5>We will provide you with a curated list of startups within 2-3 business days</h5>
+        <%= simple_form_for User.new do |f| %>
+          <p>1. Your details -we will keep these confidential</p>
+          <div class="form-row">
+            <div class="col-md-6">
+              <%= f.input :name, label: false, placeholder: "Name" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :surname, label: false, placeholder: "Surname" %>
+            </div>
+          </div>
+          <%= f.input :email, label: "Email" %>
+          <div class="form-row">
+            <div class="col-md-6">
+              <%= f.input :job_title, label: "Job title" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :company_name, label: "Company name" %>
+            </div>
+          </div>
+          <%= f.input :company_industry, label: "Industry" %>
+          <p>2. Innovation challenge info</p>
+          <%= simple_fields_for :challenges do |p| %>
+            <%= p.input :description, as: :text, input_html: {rows: 5, cols: 5}, label: "Please describe your challenge" %>
+            <%= p.input :location, as: :text, label: "3. Are you looking for startups that can run a proof of concept  in particular location?" %>
+            <%= p.input :search_criteria, as: :text, label: "Are there any other startup search criteria you want to apply?" %>
+          <% end %>
+          <div class="d-flex justify-content-around">
+            <%= f.submit "Submit", class: "btn btn-flat" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section>
