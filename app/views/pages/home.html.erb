@@ -63,27 +63,28 @@
               <%= f.input :surname, label: false, placeholder: "Surname" %>
             </div>
           </div>
-          <%= f.input :email, label: "Email" %>
+          <%= f.input :email, label: false, placeholder: "Email" %>
           <div class="form-row">
             <div class="col-md-6">
-              <%= f.input :job_title, label: "Job title" %>
+              <%= f.input :job_title, label: false, placeholder: "Job title" %>
             </div>
             <div class="col-md-6">
-              <%= f.input :company_name, label: "Company name" %>
+              <%= f.input :company_name, label: "Company name", label: false, placeholder: "Company name"  %>
             </div>
           </div>
-          <%= f.input :company_industry, label: "Industry" %>
-          <p>2. Innovation challenge info</p>
+          <%= f.input :company_industry, label: false, placeholder: "Industry"  %>
+          <p class="pt-3">2. Innovation challenge info</p>
           <%= simple_fields_for :challenges do |p| %>
-            <%= p.input :description, as: :text, input_html: {rows: 5, cols: 5}, label: "Please describe your challenge" %>
-            <%= p.input :location, as: :text, label: "3. Are you looking for startups that can run a proof of concept  in particular location?" %>
-            <%= p.input :search_criteria, as: :text, label: "Are there any other startup search criteria you want to apply?" %>
+            <%= p.input :description, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "Please describe your innovation challenge" %>
+            <%= p.input :location, as: :text, label: false, placeholder: "Are you looking for startups that can run a proof of concept  in particular location?" %>
+            <%= p.input :search_criteria, as: :text, label: false, placeholder: "Are there any other startup search criteria you want to apply?" %>
           <% end %>
           <div class="d-flex justify-content-around">
-            <%= f.submit "Submit", class: "btn btn-flat" %>
+            <%= f.submit "Submit", class: "btn btn-lg btn-flat" %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
 </section>
+<%= render 'shared/footer' %>

@@ -42,7 +42,7 @@
   i {
     font-size: 60px;
     padding-bottom: 25px;
-    color: $gray-b;
+    color: $blue;
   }
 
    p {
@@ -75,3 +75,8 @@ section {
   }
 }
 
+.form-group {
+  input {
+    border-radius: 5px;
+  }
+}
