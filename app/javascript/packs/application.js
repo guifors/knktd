@@ -33,3 +33,10 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+let btn = document.querySelector('.btn-banner');
+let el = document.querySelector('.special');
+
+btn.addEventListener('click', function () {
+    el.scrollIntoView({ behavior: "smooth" });
+});

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_13_171034) do
+ActiveRecord::Schema.define(version: 2020_06_15_083509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,25 @@ ActiveRecord::Schema.define(version: 2020_06_13_171034) do
     t.string "description"
     t.string "region"
     t.string "search_criteria"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_challenges_on_user_id"
+    t.bigint "corporate_id"
+    t.index ["corporate_id"], name: "index_challenges_on_corporate_id"
+  end
+
+  create_table "corporates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "surname"
+    t.string "job_title"
+    t.string "company_name"
+    t.string "company_description"
+    t.string "company_usp"
+    t.string "company_poc_description"
+    t.string "company_poc_examples"
+    t.string "company_industry"
+    t.string "email"
   end
 
   create_table "startups", force: :cascade do |t|
@@ -57,9 +72,10 @@ ActiveRecord::Schema.define(version: 2020_06_13_171034) do
     t.string "company_industry"
     t.boolean "corporate", default: false
     t.boolean "startup", default: false
+    t.string "e_mail"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "challenges", "users"
+  add_foreign_key "challenges", "corporates"
 end

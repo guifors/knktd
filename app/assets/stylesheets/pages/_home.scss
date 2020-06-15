@@ -61,7 +61,7 @@ section {
 }
 
 .challenge-form {
-  background-color: #F7F8F9;
+  background-color: #ECECEC;
   .form-title {
     color: black;
     font-size: 28px;
@@ -76,7 +76,19 @@ section {
 }
 
 .form-group {
-  input {
+  input, textarea {
     border-radius: 5px;
+  }
+}
+
+.challenge-form-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.logo {
+  img {
+    width: 70px;
   }
 }
