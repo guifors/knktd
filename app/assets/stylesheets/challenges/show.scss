@@ -1,0 +1,26 @@
+.banner-challenge {
+  height: 200px;
+  width: 100%;
+  background-color: #EFEFEF;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+
+  .title {
+    color: $blue;
+    font-size: 20px;
+  }
+
+  .icon {
+    text-align: center;
+    font-size: 20px;
+    color: $blue;
+  }
+}
+
+.startup-card {
+  background-color: #EFEFEF;
+  margin-top: 50px;
+  border-radius: 8px;
+  padding: 35px;
+}
