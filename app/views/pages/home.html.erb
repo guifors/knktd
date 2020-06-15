@@ -67,19 +67,19 @@
                 <%= f.input :surname, label: false, placeholder: "Surname" %>
               </div>
             </div>
-            <%= f.input :email, label: false, placeholder: "Email" %>
+            <%= f.input :email, required: true, label: false, placeholder: "Email" %>
             <div class="form-row">
               <div class="col-md-6">
                 <%= f.input :job_title, label: false, placeholder: "Job title" %>
               </div>
               <div class="col-md-6">
-                <%= f.input :company_name, label: "Company name", label: false, placeholder: "Company name"  %>
+                <%= f.input :company_name, required: true, label: "Company name", label: false, placeholder: "Company name"  %>
               </div>
             </div>
-            <%= f.input :company_industry, label: false, placeholder: "Industry"  %>
+            <%= f.input :company_industry, required: true, collection: industries, label: false, prompt: "Select industry"  %>
             <p class="pt-3">2. Innovation challenge info</p>
             <%= simple_fields_for :challenges do |p| %>
-              <%= p.input :description, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "Please describe your innovation challenge" %>
+              <%= p.input :description, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "Please describe your innovation challenge" %>
               <%= p.input :location, as: :text, label: false, placeholder: "Are you looking for startups that can run a proof of concept in a particular location?" %>
               <%= p.input :search_criteria, as: :text, label: false, placeholder: "Are there any other startup search criteria you want to apply?" %>
             <% end %>
