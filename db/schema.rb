@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_083509) do
+ActiveRecord::Schema.define(version: 2020_06_16_101506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 2020_06_15_083509) do
     t.string "email"
   end
 
+  create_table "proposals", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "startup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "usp"
+    t.string "poc_description"
+    t.string "poc_examples"
+    t.boolean "match_criteria", default: false
+    t.index ["challenge_id"], name: "index_proposals_on_challenge_id"
+    t.index ["startup_id"], name: "index_proposals_on_startup_id"
+  end
+
   create_table "startups", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -51,6 +64,18 @@ ActiveRecord::Schema.define(version: 2020_06_15_083509) do
     t.string "keyword"
     t.string "tags"
     t.string "industry"
+    t.string "founding_year"
+    t.string "funding"
+    t.integer "employees"
+    t.string "offering"
+    t.string "usp"
+    t.string "poc_description"
+    t.string "poc_examples"
+    t.boolean "match_criteria", default: false
+    t.string "employee_name"
+    t.string "employee_surname"
+    t.string "employee_job_title"
+    t.string "employee_email"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,4 +103,6 @@ ActiveRecord::Schema.define(version: 2020_06_15_083509) do
   end
 
   add_foreign_key "challenges", "corporates"
+  add_foreign_key "proposals", "challenges"
+  add_foreign_key "proposals", "startups"
 end

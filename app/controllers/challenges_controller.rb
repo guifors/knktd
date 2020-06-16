@@ -4,4 +4,8 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
   end
+
+  def companies
+    @challenge = Challenge.find(params[:id])
+  end
 end

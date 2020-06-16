@@ -40,97 +40,39 @@
 <div class="row">
   <div class="col-sm-8 offset-sm-2 d-flex justify-content-around">
     <div class="startup-card">
-      <div class="info-section section">
-        <div class="d-flex">
-          <div class="startup-logo">
-            <%= image_tag "https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/v1493047751/reck0gtaywrfymhy3cqd.jpg" %>
-          </div>
-          <div class="startup-details pl-3">
-            <h2 class="startup-name mb-0"><strong>Fixico</strong></h2>
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="startup-location">Amsterdam</span>
-            <p class="startup-short-description mb-1">Reinventing and digitising car repair handling</p>
-          </div>
+      <div class="challenge-form-card challenge-form">
+        <div class="logo d-flex justify-content-around">
+          <%= image_tag "logo_blue.png", class: "pb-4" %>
         </div>
-      </div>
-      <div class="border-bottom line"></div>
-      <div class="details-section section">
-        <div class="container">
-          <div class="row pt-2">
-            <div class="col-md-3">
-              <div class="founding-year">
-                <p class="title">Founding year</p>
-                <p class="input">2014</p>
-              </div>
+        <h5 class="form-title">Respond to the challenge here!</h5>
+        <h5>We will share the below details with the company who posted the challenge</h5>
+        <%= simple_form_for Startup.new, :url => pages_path do |f| %>
+          <div class="form-row">
+            <div class="col-md-6">
+              <%= f.input :employee_name, label: false, placeholder: "Name" %>
             </div>
-            <div class="col-md-3">
-              <div class="employees">
-                <p class="title">Est. employees</p>
-                <p class="input">63</p>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="offering">
-                <p class="title">Offering</p>
-                <p class="input">Software</p>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="funding-amount">
-                <p class="title">Funding to date</p>
-                <p class="input">$10.2M</p>
-              </div>
+            <div class="col-md-6">
+              <%= f.input :employee_surname, label: false, placeholder: "Surname" %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="border-bottom line">
-      </div>
-      <div class="usp-section section">
-        <div class="row pt-2">
-          <div class="col-md-12">
-            <div class="usp">
-              <p class="title">What makes it unique</p>
-              <p class="input">Largest 2-sided marketplace for damage repairs in Europe</p>
+          <%= f.input :employee_email, required: true, label: false, placeholder: "Email" %>
+          <div class="form-row">
+            <div class="col-md-6">
+              <%= f.input :employee_job_title, label: false, placeholder: "Job title" %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :name, required: true, label: "Company name", label: false, placeholder: "Company name"  %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="border-bottom line">
-      </div>
-      <div class="poc-section section">
-        <div class="row pt-2">
-          <div class="col-md-12">
-            <div class="poc">
-              <p class="title">How would a POC look like?</p>
-              <p class="input">Largest 2-sided marketplace for damage repairs in Europe</p>
-            </div>
+          <%= simple_fields_for :proposal do |p| %>
+            <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "What sets you apart from your competitors?" %>
+            <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "4. How would a proof of concept look like? Please include any -technical or non-technical- requirements" %>
+            <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>
+          <% end %>
+          <div class="d-flex justify-content-around">
+            <%= f.submit "Submit", class: "btn btn-lg btn-flat" %>
           </div>
-        </div>
-      </div>
-      <div class="border-bottom line">
-      </div>
-      <div class="previous-poc-section section">
-        <div class="row pt-2">
-          <div class="col-md-12">
-            <div class="previous-poc">
-              <p class="title">Examples of previous POCs run</p>
-              <p class="input">Largest 2-sided marketplace for damage repairs in Europe</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border-bottom line">
-      </div>
-      <div class="attachments-section section">
-        <div class="row pt-2">
-          <div class="col-md-12">
-            <div class="previous-poc">
-              <p class="title">Attachments</p>
-              <p class="input">Fixico deck</p>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
