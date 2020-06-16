@@ -46,7 +46,7 @@
         </div>
         <h5 class="form-title">Respond to the challenge here!</h5>
         <h5>We will share the below details with the company who posted the challenge</h5>
-        <%= simple_form_for Startup.new, :url => pages_path do |f| %>
+        <%= simple_form_for Startup.new, :url => proposals_path do |f| %>
           <div class="form-row">
             <div class="col-md-6">
               <%= f.input :employee_name, label: false, placeholder: "Name" %>
@@ -65,6 +65,7 @@
             </div>
           </div>
           <%= simple_fields_for :proposal do |p| %>
+            <%= p.input :challenge_id, as: :hidden, input_html: { value: params[:id] } %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "What sets you apart from your competitors?" %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "4. How would a proof of concept look like? Please include any -technical or non-technical- requirements" %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>

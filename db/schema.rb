@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_101506) do
+ActiveRecord::Schema.define(version: 2020_06_16_143857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2020_06_16_101506) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "corporate_id"
+    t.bigint "user_id"
     t.index ["corporate_id"], name: "index_challenges_on_corporate_id"
+    t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 
   create_table "corporates", force: :cascade do |t|
@@ -98,11 +100,24 @@ ActiveRecord::Schema.define(version: 2020_06_16_101506) do
     t.boolean "corporate", default: false
     t.boolean "startup", default: false
     t.string "e_mail"
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+    t.index ["invitations_count"], name: "index_users_on_invitations_count"
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "challenges", "corporates"
+  add_foreign_key "challenges", "users"
   add_foreign_key "proposals", "challenges"
   add_foreign_key "proposals", "startups"
 end

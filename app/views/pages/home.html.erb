@@ -3,6 +3,7 @@
   <%= image_tag "logo.png" %>
 <% end %>
 <div class="banner">
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   <div class="banner-content text-center">
     <h1>Corporate innovation on demand</h1>
     <p> Identify the best startups for your corporate innovation challenges</p>
@@ -60,7 +61,7 @@
           </div>
           <h5 class="form-title">Submit your innovation challenge here</h5>
           <h5>We will send you a curated list of startups within 2-3 business days</h5>
-          <%= simple_form_for Corporate.new, :url => proposals_path do |f| %>
+          <%= simple_form_for Corporate.new, :url => challenges_path do |f| %>
             <p>1. Your details -we will keep these confidential</p>
             <div class="form-row">
               <div class="col-md-6">

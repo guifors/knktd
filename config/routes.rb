@@ -5,9 +5,13 @@ Rails.application.routes.draw do
     collection do
       get :confirm
     end
+    collection do
+      get :confirm_two
+    end
   end
 
-  resources :challenges, only: %i[show] do
+  resources :challenges, only: %i[show create] do
+    resources :users
     member do
       get :companies
     end

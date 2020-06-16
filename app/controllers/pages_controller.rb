@@ -2,35 +2,12 @@ require 'nokogiri'
 require 'open-uri'
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :create, :confirm]
+  skip_before_action :authenticate_user!, only: [:home, :create, :confirm, :confirm_two]
 
   def home
   end
 
-  def create
-    @corporate = Corporate.new(corporate_params)
-    @challenge = Challenge.new(challenge_params)
-    if @corporate.save
-      @challenge.corporate_id = @corporate.id
-      @challenge.save!
-      redirect_to confirm_pages_path
-    else
-      flash[:alert] = "Something went wrong."
-      render :home
-    end
-  end
-
   def confirm
-  end
-
-  private
-
-  def corporate_params
-    params.require(:corporate).permit(:name, :surname, :email, :job_title, :company_name, :company_industry)
-  end
-
-  def challenge_params
-    params.require(:challenges).permit(:region, :description, :search_criteria)
   end
 
   def get_additional_info_from_dealroom(startups)
