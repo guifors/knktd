@@ -1,5 +1,8 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://www.konektd.io" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
