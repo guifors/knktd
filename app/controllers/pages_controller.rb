@@ -2,12 +2,16 @@ require 'nokogiri'
 require 'open-uri'
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :create, :confirm, :confirm_two]
+  skip_before_action :authenticate_user!, only: [:home, :create, :confirm, :confirm_two, :privacy]
 
   def home
+    @corporate = Corporate.new
   end
 
   def confirm
+  end
+
+  def privacy
   end
 
   def get_additional_info_from_dealroom(startups)

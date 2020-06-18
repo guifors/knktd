@@ -60,7 +60,7 @@
           </div>
           <h5 class="form-title">Submit your innovation challenge here</h5>
           <h5>We will send you a curated list of startups within 2-3 business days</h5>
-          <%= simple_form_for Corporate.new, :url => challenges_path do |f| %>
+          <%= simple_form_for @corporate, :url => challenges_path do |f| %>
             <p>1. Your details -we will keep these confidential</p>
             <div class="form-row">
               <div class="col-md-6">
@@ -86,8 +86,14 @@
               <%= p.input :location, as: :text, label: false, placeholder: "Are you looking for startups that can run a proof of concept in a particular location?" %>
               <%= p.input :search_criteria, as: :text, label: false, placeholder: "Are there any other startup search criteria you want to apply?" %>
             <% end %>
+            <div class="d-flex privacy">
+              <%= f.input :privacy, as: :boolean, label: false do %>
+                <%= f.check_box :privacy, {}, "true", "false" %>
+              <% end %>
+              <p>By submitting this form, I accept that my data may be used to respond to your research request. Check out our complete <%= link_to "Privacy Policy", privacy_pages_path %>. </p>
+            </div>
             <div class="d-flex justify-content-around">
-              <%= f.submit "Submit", class: "btn btn-lg btn-flat" %>
+              <%= f.submit "Submit", class: "btn btn-lg btn-flat mt-3" %>
             </div>
           <% end %>
         </div>

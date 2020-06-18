@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     collection do
       get :confirm_two
     end
+    collection do
+      get :privacy
+    end
   end
 
   resources :challenges, only: %i[show create] do
