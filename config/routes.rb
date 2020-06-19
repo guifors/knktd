@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     member do
       get :companies
     end
+    member do
+      get :published
+    end
   end
   resources :proposals, only: %i[create]
   resources :startups, only: %i[create]

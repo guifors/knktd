@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+challenge_id =
+  startup_id =
+  startup = Startup.find(startup_id)
+Startup.update(location: "", description: "", founding_year: "", employees: "", offering: "", funding: "")
