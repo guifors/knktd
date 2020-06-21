@@ -28,9 +28,9 @@
         </span>
         <p class="input">test test</p>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 pt-3">
         <i class="icon fas fa-rocket"></i>
-        <span class="challenge-title">Challenge description
+        <span class="challenge-title">CHALLENGE DESCRIPTION
         </span>
         <p class="input">test test</p>
       </div>
@@ -70,6 +70,12 @@
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "4. How would a proof of concept look like? Please include any -technical or non-technical- requirements" %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>
           <% end %>
+          <div class="d-flex privacy">
+            <%= f.input :privacy, as: :boolean, label: false do %>
+              <%= f.check_box :privacy, {}, "true", "false" %>
+            <% end %>
+            <p>By submitting this form, I accept that my data may be used to respond to your research request. Check out our complete <%= link_to "Privacy Policy", privacy_pages_path %>. </p>
+          </div>
           <div class="d-flex justify-content-around">
             <%= f.submit "Submit", class: "btn btn-lg btn-flat" %>
           </div>

@@ -1,13 +1,24 @@
+<%= content_for(:navbar_class, "navbar-home") %>
+<div class="banner-logo">
+  <div class="logo d-flex justify-content-around">
+    <div class="d-flex logo-text">
+      <%= image_tag "logo.png", class: "" %>
+      <p class="input pl-2">konektd</p>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="col-md-6 offset-3 mt-3 session-margin">
-    <div class="login-form">
+  <div class="col-md-8 offset-2 mt-3 session-margin">
+    <div class="login-form challenge-form-index">
       <div class="logo d-flex justify-content-around">
         <%= image_tag "logo.png", class: "pb-4" %>
       </div>
       <h2>My challenges</h2>
-      <ul class="challenge-list-index">
+      <ul class="challenge-list-index pt-4">
         <% @challenges.each do |challenge| %>
-          <li><%= link_to challenge.description.truncate(50), companies_challenge_path(challenge) %></li>
+          <%= link_to companies_challenge_path(challenge) do %>
+            <li><%= challenge.description.truncate(50) %></li>
+          <% end %>
         <% end %>
       </ul>
       <p></p>

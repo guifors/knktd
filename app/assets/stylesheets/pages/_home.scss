@@ -82,7 +82,7 @@ section {
 }
 
 .challenge-form-card {
-  background-color: white;
+  background-color: #EFEFEF;
   border-radius: 5px;
   padding: 30px;
 }
@@ -156,8 +156,14 @@ section {
 
 .challenge-list-index {
   li {
-    font-size: 20px;
     padding: 5px 0px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    padding-left: 10px;
+    color: black;
+    font-size: 16px;
   }
 }
 
@@ -167,3 +173,13 @@ section {
     text-align: center;
   }
 }
+
+.form-home {
+  background-color: white !important;
+  border: 1px solid $blue;
+}
+
+.challenge-form-index {
+
+}
+

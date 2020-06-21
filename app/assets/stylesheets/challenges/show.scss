@@ -69,28 +69,19 @@
   }
 }
 
-
-.carousel-nav-icon {
-   height: 48px;
-   width: 48px;
-}
-.carousel-item {
-   .col, .col-sm, .col-md {
-      margin: 8px;
-      height: 300px;
-      background-size: cover;
-      background-position: center center;
-   }
-   img {
-
-   }
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
 }
 
-svg {
-  color: $blue !important;
+.carousel-control-prev-icon {
+  position: relative;
+  right: 73px;
 }
 
-.card {
-  margin: 0 auto;
+.carousel-control-next-icon {
+  position: relative;
+  left: 43px;
 }
+
 
