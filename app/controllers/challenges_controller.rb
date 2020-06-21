@@ -1,5 +1,10 @@
 class ChallengesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:companies, :create, :show]
+  skip_before_action :authenticate_user!, only: [:create, :show]
+
+  def index
+    @challenges = current_user.challenges
+    @published_challenges = current_user.challenges.where(status: "published")
+  end
 
   def create
     @corporate = Corporate.new(corporate_params)
@@ -7,6 +12,7 @@ class ChallengesController < ApplicationController
     if @corporate.save
       @challenge.corporate_id = @corporate.id
       @user = User.invite!(email: params[:corporate][:email])
+      @user.update(name: params[:corporate][:name], surname: params[:corporate][:surname], job_title: params[:corporate][:job_title], corporate: true)
       @challenge.user = @user
       @challenge.save!
       redirect_to confirm_pages_path
@@ -17,10 +23,10 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @challenge = Challenge.find(params[:id])
   end
 
   def companies
+    @challenge_for_title = Challenge.find(params[:id])
     @challenge = Challenge.find(params[:id])
   end
 

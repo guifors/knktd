@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :challenges, only: %i[show create] do
+  resources :challenges, only: %i[index show create] do
     resources :users
     member do
       get :companies

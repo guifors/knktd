@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: linear-gradient(rgba(33,128,163,1), rgba(33,128,163,1)), image-url("banner.jpg");
+  background-image: linear-gradient(rgba(35,63,168,0.4), rgba(35,63,168,0.4)), image-url("banner.jpg");
   background-size: cover;
   background-position: center;
   h1 {
@@ -89,7 +89,7 @@ section {
 
 .logo {
   img {
-    width: 65px;
+    width: 45px;
   }
 }
 
@@ -101,5 +101,69 @@ section {
   p {
     color: $light-gray;
     padding-left: 10px;
+  }
+}
+
+.login-form {
+  color: white;
+  margin-top: 100px;
+  background-color: $blue;
+  border-radius: 10px;
+  padding: 60px 40px;
+  border: 1px solid $light-gray;
+
+  .form-headline-info {
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  a {
+    color: white;
+  }
+  h2 {
+    font-weight: bold;
+    text-align: center;
+
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+  }
+
+  input, select, textarea {
+    border-radius: 3px;
+  }
+
+  .btn-flat {
+    color: white;
+  }
+
+  .btn-search {
+    background-color: #C2C2C2;
+    color: white;
+  }
+
+  .add-later-btn {
+    font-size: 13px;
+    font-weight: lighter;
+  }
+
+  .form-check {
+    padding-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+.challenge-list-index {
+  li {
+    font-size: 20px;
+    padding: 5px 0px;
+  }
+}
+
+.challenge-not-published {
+
+  h5 {
+    text-align: center;
   }
 }

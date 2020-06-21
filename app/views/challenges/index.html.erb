@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-md-6 offset-3 mt-3 session-margin">
+    <div class="login-form">
+      <div class="logo d-flex justify-content-around">
+        <%= image_tag "logo.png", class: "pb-4" %>
+      </div>
+      <h2>My challenges</h2>
+      <ul class="challenge-list-index">
+        <% @challenges.each do |challenge| %>
+          <li><%= link_to challenge.description.truncate(50), companies_challenge_path(challenge) %></li>
+        <% end %>
+      </ul>
+      <p></p>
+    </div>
+  </div>
+</div>

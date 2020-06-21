@@ -1,4 +1,18 @@
 <%= content_for(:navbar_class, "navbar-home") %>
+<% content_for :navbar_links do %>
+  <% if user_signed_in? %>
+    <li class="nav-item dropdown">
+      <%= link_to "My challenges", challenges_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item pr-5">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link logout-link" %>
+    </li>
+  <% else %>
+    <li class="nav-item pr-5">
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-link" %>
+    </li>
+  <% end %>
+<% end %>
 <% content_for :logo do %>
   <%= image_tag "logo.png" %>
 <% end %>
@@ -20,9 +34,9 @@
           <div class="sub-section pt-5">
             <i class="fas fa-rocket"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">1. Tell us about an innovation challenge you want to solve
+              <h5 class="subtitle subtitle-sub-section">1. Submit your innovation challenge
               </h5>
-              <p>We keep your company details absolutely confidential</p>
+              <p>Tell us about a challenge you want to solve. We keep your company details absolutely confidential.</p>
             </div>
           </div>
         </div>
@@ -30,9 +44,9 @@
           <div class="sub-section pt-5">
             <i class="fas fa-search-location"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">2. We look for the best startups who can solve for the challenge</h5>
+              <h5 class="subtitle subtitle-sub-section">2. We search for the best startups</h5>
               <p>
-                Include any search or startup criteria you want</p>
+                We look for the best startups who can solve for the challenge. Include any search or startup criteria you want.</p>
             </div>
           </div>
         </div>
@@ -40,9 +54,9 @@
           <div class="sub-section pt-5">
             <i class="fas fa-list-alt"></i>
             <div>
-              <h5 class="subtitle subtitle-sub-section">3. You get a curated list of startups with key POC-related information </h5>
+              <h5 class="subtitle subtitle-sub-section">3. Your select the most suitable </h5>
               <p>
-                Startups respond to the challenge with their most up to date information</p>
+                Get a curated list of startups with key POC-related information so you can choose the one that best suits your needs. </p>
             </div>
           </div>
         </div>
@@ -56,7 +70,7 @@
       <div class="col-md-8 offset-md-2">
         <div class="challenge-form-card">
           <div class="logo d-flex justify-content-around">
-            <%= image_tag "logo_blue.png", class: "pb-4" %>
+            <%= image_tag "logo_blue.png", class: "pb-4 logo-blue" %>
           </div>
           <h5 class="form-title">Submit your innovation challenge here</h5>
           <h5>We will send you a curated list of startups within 2-3 business days</h5>
