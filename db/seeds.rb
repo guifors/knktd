@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-challenge_id =
-  startup_id =
-  startup = Startup.find(startup_id)
-Startup.update(location: "", description: "", founding_year: "", employees: "", offering: "", funding: "")
+# challenge_id =
+#   startup_id =
+#   startup = Startup.find(startup_id)
+# Startup.update(location: "", description: "", founding_year: "", employees: "", offering: "", funding: "")

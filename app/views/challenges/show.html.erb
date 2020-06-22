@@ -14,25 +14,25 @@
         <i class="icon fas fa-industry"></i>
         <span class="challenge-title">Industry
         </span>
-        <p class="input">test test</p>
+        <p class="input"><%= @challenge_for_title.corporate.company_industry %></p>
       </div>
       <div class="col-md-3">
         <i class="icon fas fa-building"></i>
         <span class="challenge-title">Company type
         </span>
-        <p class="input">test test test</p>
+        <p class="input"><%= @challenge_for_title.corporate.company_type%></p>
       </div>
       <div class="col-md-6">
         <i class="icon fas fa-hand-pointer"></i>
         <span class="challenge-title">Desired criteria
         </span>
-        <p class="input">test test</p>
+        <p class="input"><%= @challenge_for_title.search_criteria %></p>
       </div>
       <div class="col-md-12 pt-3">
         <i class="icon fas fa-rocket"></i>
         <span class="challenge-title">CHALLENGE DESCRIPTION
         </span>
-        <p class="input">test test</p>
+        <p class="input"><%= @challenge_for_title.description %></p>
       </div>
     </div>
   </div>
@@ -70,6 +70,7 @@
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "4. How would a proof of concept look like? Please include any -technical or non-technical- requirements" %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>
           <% end %>
+          <%= f.input :photo, as: :file, label: "Attach pitch deck", class: "py-2" %>
           <div class="d-flex privacy">
             <%= f.input :privacy, as: :boolean, label: false do %>
               <%= f.check_box :privacy, {}, "true", "false" %>

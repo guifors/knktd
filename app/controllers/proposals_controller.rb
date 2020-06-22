@@ -16,7 +16,7 @@ class ProposalsController < ApplicationController
   private
 
   def startup_params
-    params.require(:startup).permit(:employee_name, :employee_surname, :employee_email, :employee_job_title, :name, :privacy)
+    params.require(:startup).permit(:employee_name, :employee_surname, :employee_email, :employee_job_title, :name, :privacy, :photo)
   end
 
   def proposal_params

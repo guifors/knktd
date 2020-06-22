@@ -23,6 +23,7 @@ class ChallengesController < ApplicationController
   end
 
   def show
+    @challenge_for_title = Challenge.find(params[:id])
   end
 
   def companies
