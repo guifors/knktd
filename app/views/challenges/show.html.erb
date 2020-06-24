@@ -31,7 +31,7 @@
             <%= p.input :challenge_id, as: :hidden, input_html: { value: params[:id] } %>
             <%= p.input :usp, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "What sets you apart from your competitors?" %>
             <%= p.input :poc_description, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "4. How would a proof of concept look like? Please include any -technical or non-technical- requirements" %>
-            <%= p.input :company_type, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>
+            <%= p.input :poc_examples, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "5. Please provide examples of POCs you have run with other companies" %>
           <% end %>
           <%= f.input :photo, as: :file, label: "Attach pitch deck", class: "py-2" %>
           <div class="d-flex privacy">
