@@ -1,0 +1,38 @@
+<div class="banner-logo">
+  <div class="logo d-flex justify-content-around">
+    <div class="d-flex logo-text">
+      <%= image_tag "logo.png", class: "" %>
+      <p class="input pl-2">konektd</p>
+    </div>
+  </div>
+</div>
+<div class="banner-challenge">
+  <div class="container">
+    <div class="row py-4">
+      <div class="col-md-3">
+        <i class="icon fas fa-industry"></i>
+        <span class="challenge-title">Industry
+        </span>
+        <p class="input"><%= challenge.corporate.company_industry %></p>
+      </div>
+      <div class="col-md-4">
+        <i class="icon fas fa-building"></i>
+        <span class="challenge-title">Company activity
+        </span>
+        <p class="input"><%= challenge.corporate.company_type %></p>
+      </div>
+      <div class="col-md-5">
+        <i class="icon fas fa-hand-pointer"></i>
+        <span class="challenge-title">Desired criteria
+        </span>
+        <p class="input"><%= challenge.search_criteria %></p>
+      </div>
+      <div class="col-md-12 pt-3">
+        <i class="icon fas fa-rocket"></i>
+        <span class="challenge-title">CHALLENGE DESCRIPTION
+        </span>
+        <p class="input"><%= challenge.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
