@@ -97,7 +97,7 @@
             <p class="pt-3">2. Innovation challenge info</p>
             <%= simple_fields_for :challenges do |p| %>
               <%= p.input :description, required: true, as: :text, input_html: {rows: 5, cols: 5} ,label: false, placeholder: "Please describe your innovation challenge" %>
-              <%= p.input :location, as: :text, label: false, placeholder: "Are you looking for startups that can run a proof of concept in a particular location?" %>
+              <%= p.input :region, as: :text, label: false, placeholder: "Are you looking for startups that can run a proof of concept in a particular location?" %>
               <%= p.input :search_criteria, as: :text, label: false, placeholder: "Are there any other startup search criteria you want to apply?" %>
             <% end %>
             <div class="d-flex privacy">
