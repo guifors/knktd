@@ -104,7 +104,7 @@
               <%= f.input :privacy, as: :boolean, label: false do %>
                 <%= f.check_box :privacy, {}, "true", "false" %>
               <% end %>
-              <p>By submitting this form, I accept that my data may be used to respond to your research request. Check out our complete <%= link_to "Privacy Policy", privacy_pages_path %>. </p>
+              <p>By submitting this form, I accept that my data may be used to respond to your research request. Check out our complete <%= link_to "Privacy Policy", privacy_pages_path %>.</p>
             </div>
             <div class="d-flex justify-content-around">
               <%= f.submit "Submit", class: "btn btn-lg btn-flat mt-3" %>
@@ -115,4 +115,25 @@
     </div>
   </div>
 </section>
+<div class="banner-small">
+  <div class="container">
+    <div class="banner-small-text pt-4">
+      <h4>About us</h4>
+      <p>We are a global team of passionate corporate innovation specialists, product managers and change agents who have experienced first-hand the struggle of finding the best solutions and partners for specific innovation challenges.
+        The world is full of events and websites to help match investors and startups, we designed konektd to help operators and practitioners. Our mission is to accelerate corporate innovation by helping companies to identify and select partners and design proof of concepts. Please get in touch.</p>
+    </div>
+    <div class="d-flex justify-content-around">
+      <div>
+        <div class="footer-links">
+          <h5>Contact us | contact@konektd.io |</h5>
+          <div class="links">
+            <a href="https://www.facebook.com/pg/konektd2/about/"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/konektd2"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/konktd/"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%= render 'shared/footer' %>

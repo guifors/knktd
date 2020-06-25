@@ -61,7 +61,7 @@ section {
 }
 
 .challenge-form {
-  background-color: #ECECEC;
+  background-color: #F9F9F9;
   .form-title {
     color: black;
     font-size: 28px;
@@ -183,3 +183,29 @@ section {
 
 }
 
+.banner-small {
+  padding: 40px 0px;
+  background-image: linear-gradient(rgba(35,63,168,0.7), rgba(35,63,168,0.7)), image-url("banner-small.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  color: white;
+  text-align: center;
+
+  h4 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  p {
+    color: white;
+    opacity: .8;
+    font-size: 21px;
+    margin-top: 50px;
+    margin-bottom: 95px;
+  }
+}
+
+.banner-small-text {
+  text-align: center;
+}
